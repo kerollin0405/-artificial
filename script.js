@@ -22,7 +22,11 @@ const perguntas = [
         alternativas: [
             {
                 texto:"Utiliza uma ferramenta de busca na internet que utiliza IA para que ela ajude a encontrar informações relevantes para o trabalho e explique numa linguagem que facilite o entendimento.",
-                afirmacao:"Escreve o trabalho com base nas conversas que teve com colegas, algumas pesquisas na internet e conhecimentos próprios sobre o tema."
+                afirmacao: "afirmacao"
+            },
+            {
+                texto:"Escreve o trabalho com base nas conversas que teve com colegas, algumas pesquisas na internet e conhecimentos próprios sobre o tema.",
+                afirmacao: "afirmacao"
             }
         ]
             
@@ -32,8 +36,12 @@ const perguntas = [
         alternativas: [
             {
                 texto: "Defende a ideia de que a IA pode criar novas oportunidades de emprego e melhorar habilidades humanas.",
-                afirmacao: "Me preocupo com as pessoas que perderão seus empregos para máquinas e defendem a importância de proteger os trabalhadores."
+                afirmacao: "afirmacao"
 
+        },
+        {
+            texto:"Me preocupo com as pessoas que perderão seus empregos para máquinas e defendem a importância de proteger os trabalhadores.",
+            afirmacao:"afirmacao",
         }
             
         ]
@@ -43,7 +51,11 @@ const perguntas = [
         alternativas: [
             {
                 texto:"Criar uma imagem utilizando uma plataforma de design como o Paint.",
-                afirmacao:"Criar uma imagem utilizando um gerador de imagem de IA."
+                afirmacao:"afirmacao"
+            },
+            {
+                texto:"Criar uma imagem utilizando um gerador de imagem de IA.",
+                afirmacao:"afirmacao"
             }
             
         ]
@@ -53,7 +65,11 @@ const perguntas = [
         alternativas: [
             {
                 texto:"Escrever comandos para o chat é uma forma de contribuir com o trabalho, por isso não é um problema utilizar o texto inteiro.",
-                afirmacao:"O chat pode ser uma tecnologia muito avançada, mas é preciso manter a atenção pois toda máquina erra, por isso revisar o trabalho e contribuir com as perspectivas pessoais é essencial."
+                afirmacao:"afirmacao"
+            },
+            {
+                texto:"O chat pode ser uma tecnologia muito avançada, mas é preciso manter a atenção pois toda máquina erra, por isso revisar o trabalho e contribuir com as perspectivas pessoais é essencial.",
+                afirmacao:"afirmacao"
             }
             
         ]
@@ -67,15 +83,10 @@ function mostraPergunta() {
         mostraResultado();
         return;
     }
+   
     perguntaAtual= perguntas[atual];
     caixaPerguntas.textContent=perguntaAtual.enunciado;
     caixaAlternativas.textContent="";
-    mostraAlternativas();
-}
-
-function mostraPergunta() {
-    perguntaAtual = perguntas[atual];
-    caixaPerguntas.textContent = perguntaAtual.enunciado;
     mostraAlternativas();
 }
 function mostraAlternativas() {
@@ -84,6 +95,7 @@ function mostraAlternativas() {
           botaoAlternativa.textContent = alternativa.texto;
           botaoAlternativas.addEventListener("click",()=>respostaselecionadd(alternativa))
           caixaAlternativas.appendChild(botaoAlternativas);
+
         }
       }
       function respostaselecionada(opcaoSelecionada){
