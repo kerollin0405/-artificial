@@ -111,6 +111,19 @@ function mostraAlternativas() {
       }
       
 mostraPergunta();
+function aleatorio(lista) {
+    const posicao = Math.random()* lista.length;
+    return lista[posicao];
+}
+function respostaSelecionada(opcaoSelecionada){
+    const afirmacoes = aleatorio(opcaoSelecionada.afirmacao);
+    historiaFinal += afirmacoes + " ";
+    atual++;
+    mostraPergunta();
+}
+
+
+
 
 
 
